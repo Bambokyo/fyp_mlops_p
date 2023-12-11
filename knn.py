@@ -58,6 +58,5 @@ def knn_M(query, dataset, K, method='knn', metric='euclidean'):
     print(f"Mean Per Joint Squared Error (MPJSE): {mean_mpjse}")
     print(f"Percentage of Correct Keypoints (PCK): {mean_pck}")
     print(f"Retrieval Time: {retrieval_time} seconds")
-    
+
     return mean_pck
-    
