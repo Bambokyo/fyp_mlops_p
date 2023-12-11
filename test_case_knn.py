@@ -2,6 +2,8 @@ import unittest
 import numpy as np
 from knn import knn_M
 
+# hello
+
 class TestKnnMFunction(unittest.TestCase):
     def setUp(self):
         # Set up common data for your test cases, e.g., sample query and dataset
