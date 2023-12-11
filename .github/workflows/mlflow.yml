@@ -35,8 +35,8 @@ jobs:
         git checkout main || git checkout -b main
         git merge origin/main --allow-unrelated-histories -m "Merge remote-tracking branch 'origin/main'"
         git add -A
-        git diff --quiet && git diff --staged --quiet || (git commit -m "Update MLflow tracking results" && git push https://github.com/Bambokyo/fyp_mlops_p.git main)
-        # git push https://github.com/Bambokyo/fyp_mlops_p.git main
+        # git diff --quiet && git diff --staged --quiet || (git commit -m "Update MLflow tracking results" && git push https://github.com/Bambokyo/fyp_mlops_p.git main)
+        git push https://github.com/Bambokyo/fyp_mlops_p.git main
       env:
         GITHUB_TOKEN: ${{ secrets.TOKEN }}
 
