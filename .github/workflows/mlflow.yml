@@ -32,8 +32,8 @@ jobs:
         git config --global user.name 'Bambokyo'
         git config --global user.email 'bilal513629@gmail.com'
         git fetch
-        git checkout modelTrack || git checkout -b modelTrack
-        git merge origin/modelTrack --allow-unrelated-histories -m "Merge remote-tracking branch 'origin/main'"
+        git checkout main || git checkout -b main
+        git merge origin/main --allow-unrelated-histories -m "Merge remote-tracking branch 'origin/main'"
         git add -A                                                                                      
         git diff --quiet && git diff --staged --quiet || (git commit -m "Update MLflow tracking results" && git push https://${{ secrets.TOKEN }}@github.com/Bambokyo/fyp_mlops_p.git main)
         git push https://${{ secrets.TOKEN }}@github.com/Bambokyo/fyp_mlops_p.git main
