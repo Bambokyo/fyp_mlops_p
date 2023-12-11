@@ -1,7 +1,6 @@
 from sklearn.neighbors import NearestNeighbors, BallTree
 import numpy as np
 import time
-import h5py
 
 
 def knn_M(query, dataset, K, method='knn', metric='euclidean'):
