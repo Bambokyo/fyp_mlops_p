@@ -3,18 +3,6 @@ import numpy as np
 import time
 import h5py
 
-# Open the .mat file in read mode
-#mat_file = h5py.File('queryDataset.mat', 'r')
-#mat_file2 = h5py.File('wholeDataset.mat', 'r')
-
-Q = np.array(mat_file['queryDataset']['pos'])
-D = np.array(mat_file2['wholeDataset']['pos'])
-
-query = Q
-dataset = D
-print("Query shape: ", query.shape)
-print("Dataset shape: ", dataset.shape)
-
 
 def knn_M(query, dataset, K, method='knn', metric='euclidean'):
     if method == 'knn':
@@ -73,7 +61,4 @@ def knn_M(query, dataset, K, method='knn', metric='euclidean'):
     print(f"Retrieval Time: {retrieval_time} seconds")
 
     return mean_pck
-
-
-# calling the function
-knn_M(query, dataset, 32, method='knn', metric='euclidean')
+    
