@@ -75,7 +75,5 @@ def knn_M(query, dataset, K, method='knn', metric='euclidean'):
     return mean_pck
 
 
-
-
 # calling the function
 knn_M(query, dataset, 32, method='knn', metric='euclidean')
