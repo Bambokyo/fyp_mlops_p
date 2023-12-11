@@ -1,0 +1,39 @@
+name: MLflow CI/CD Workflow
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  mlflow-track-and-save:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out repository code
+      uses: actions/checkout@v3
+      with:
+        persist-credentials: false
+
+    - name: Set up Python
+      uses: actions/setup-python@v3
+      with:
+        python-version: '3.9'
+
+    - name: Install dependencies
+      run: pip install -r requirements.txt
+
+    - name: Run MLflow experiment
+      env:
+        MLFLOW_TRACKING_URI: ${{ secrets.MLFLOW_TRACKING_URI }}
+      run: python ml_flow.py
+
+    - name: Commit and push 
+      run: |
+        git config --global user.name 'Bambokyo'
+        git config --global user.email 'bilal513629@gmail.com'
+        git fetch
+        git checkout modelTrack || git checkout -b modelTrack
+        git merge origin/modelTrack --allow-unrelated-histories -m "Merge remote-tracking branch 'origin/main'"
+        git add -A
+        git diff --quiet && git diff --staged --quiet || (git commit -m "Update MLflow tracking results" && git push https://${{ secrets.TOKEN }}@github.com/Bambokyo/mlopsproject.git main)
+        git push https://${{ secrets.TOKEN }}@github.com/Bambokyo/mlopsproject.git main
