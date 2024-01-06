@@ -14,7 +14,9 @@ pipeline {
             steps {
                 script {
                     // Define your Docker image name and tag
-                    def dockerImage = 'bilali20187/p1'
+                    // def dockerImage = 'bilali20187/p1'
+                    // def dockerTag = 'latest'
+                    def dockerImage = 'zarazia/p1'
                     def dockerTag = 'latest'
 
                     // Build the Docker image
@@ -22,7 +24,7 @@ pipeline {
 
                     // Log in to Docker Hub (make sure to set DOCKER_HUB_USERNAME and DOCKER_HUB_PASSWORD as Jenkins credentials)
                     //withCredentials([usernamePassword(credentialsId: 'docker-hub-credentials-id', usernameVariable: 'DOCKER_HUB_USERNAME', passwordVariable: 'DOCKER_HUB_PASSWORD')]) {
-                        bat "docker login -u bilali201877 -p f@st2011351"
+                        bat "docker login -u zarazia -p 28366jazz"
                     //}
 
                     // Push the Docker image to Docker Hub
