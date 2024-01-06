@@ -2,7 +2,8 @@ name: MLflow CI/CD Workflow
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
   mlflow-track-and-save:
@@ -29,20 +30,18 @@ jobs:
 
     - name: Commit and push
       run: |
-        git config --global user.name 'Bambokyo'
-        git config --global user.email 'bilal513629@gmail.com'
-        
+        git config --local user.name 'Bambokyo'
+        git config --local user.email 'bilal513629@gmail.com'
+
         # Checkout the main branch or create a new one if it doesn't exist
         git checkout -B main
-        
+
         # Ensure that local changes are included in the commit
         git add -A
-    
+
         # Check if there are changes to commit
         git diff --quiet && git diff --staged --quiet || (
           git commit -m "Update MLflow tracking results"
           # Push the changes to the main branch
           git push https://${{ secrets.TOKEN }}@github.com/Bambokyo/fyp_mlops_p.git main
         )
-    
-    
