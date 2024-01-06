@@ -28,20 +28,20 @@ jobs:
         MLFLOW_TRACKING_URI: ${{ secrets.MLFLOW_TRACKING_URI }}
       run: python ml_flow.py
 
-    - name: Commit and push
-      run: |
-        git config --local user.name 'Bambokyo'
-        git config --local user.email 'bilal513629@gmail.com'
+    # - name: Commit and push
+    #   run: |
+    #     git config --local user.name 'Bambokyo'
+    #     git config --local user.email 'bilal513629@gmail.com'
 
-        # Checkout the main branch or create a new one if it doesn't exist
-        git checkout -B main
+    #     # Checkout the main branch or create a new one if it doesn't exist
+    #     git checkout -B main
 
-        # Ensure that local changes are included in the commit
-        git add -A
+    #     # Ensure that local changes are included in the commit
+    #     git add -A
 
-        # Check if there are changes to commit
-        git diff --quiet && git diff --staged --quiet || (
-          git commit -m "Update MLflow tracking results"
-          # Push the changes to the main branch
-          git push https://${{ secrets.TOKEN }}@github.com/Bambokyo/fyp_mlops_p.git main
-        )
+    #     # Check if there are changes to commit
+    #     git diff --quiet && git diff --staged --quiet || (
+    #       git commit -m "Update MLflow tracking results"
+    #       # Push the changes to the main branch
+    #       git push https://${{ secrets.TOKEN }}@github.com/Bambokyo/fyp_mlops_p.git main
+    #     )
