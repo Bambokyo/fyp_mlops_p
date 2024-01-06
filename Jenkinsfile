@@ -26,6 +26,8 @@ pipeline {
                     //}
 
                     // Push the Docker image to Docker Hub
+                    // bat "docker tag local-image:tagname new-repo:tagname"
+                    // bat "docker push new-repo:tagname"
                     bat "docker push ${dockerImage}:${dockerTag}"
                 }
             }
