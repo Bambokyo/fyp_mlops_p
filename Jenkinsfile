@@ -20,17 +20,17 @@ pipeline {
                     // def dockerTag = 'latest'
 
                     // Build the Docker image
-                    sh "docker build -t ${dockerImage}:${dockerTag} ."
+                    bat "docker build -t ${dockerImage}:${dockerTag} ."
 
                     // Log in to Docker Hub (make sure to set DOCKER_HUB_USERNAME and DOCKER_HUB_PASSWORD as Jenkins credentials)
                     //withCredentials([usernamePassword(credentialsId: 'docker-hub-credentials-id', usernameVariable: 'DOCKER_HUB_USERNAME', passwordVariable: 'DOCKER_HUB_PASSWORD')]) {
-                        sh "docker login -u bilali201877 -p fast2011351"
+                        bat "docker login -u bilali201877 -p fast2011351"
                     //}
 
                     // Push the Docker image to Docker Hub
                     // bat "docker tag local-image:tagname new-repo:tagname"
                     // bat "docker push new-repo:tagname"
-                    sh "docker push ${dockerImage}:${dockerTag}"
+                    bat "docker push ${dockerImage}:${dockerTag}"
                 }
             }
         }
