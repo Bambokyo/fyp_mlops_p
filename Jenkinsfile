@@ -20,7 +20,7 @@ pipeline {
                     // def dockerTag = 'latest'
 
                     // Build the Docker image
-                    bat "docker build -t ${dockerImage}:${dockerTag} ."
+                    psh "docker build -t ${dockerImage}:${dockerTag} ."
 
                     // Log in to Docker Hub (make sure to set DOCKER_HUB_USERNAME and DOCKER_HUB_PASSWORD as Jenkins credentials)
                     //withCredentials([usernamePassword(credentialsId: 'docker-hub-credentials-id', usernameVariable: 'DOCKER_HUB_USERNAME', passwordVariable: 'DOCKER_HUB_PASSWORD')]) {
