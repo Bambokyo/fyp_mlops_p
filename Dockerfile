@@ -10,4 +10,4 @@ RUN pip install -r requirements.txt
 COPY knn.py .
 
 # Define the command to run your Flask app
-CMD ["python", "knn.py"]
+# CMD ["python", "knn.py"]
