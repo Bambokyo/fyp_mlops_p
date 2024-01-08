@@ -14,7 +14,7 @@ pipeline {
             steps {
                 script {
                     // Define your Docker image name and tag
-                    def dockerImage = 'bilali20187/p1'
+                    def dockerImage = 'areebaayazz/p1'
                     def dockerTag = 'latest'
 
                     // Build the Docker image
