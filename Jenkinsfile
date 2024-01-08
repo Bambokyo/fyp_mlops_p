@@ -24,7 +24,6 @@
                 }
             }
         }
-    }
 
     post {
         success {
