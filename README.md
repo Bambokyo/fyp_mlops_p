@@ -5,3 +5,13 @@ Human Pose Estimation (HPE) in computer vision has gained prominence in applicat
 
 ![alt text](https://github.com/Bambokyo/fyp_mlops_p/blob/main/PoseMethodology.png?raw=true)
 
+#### Data Pre-processing:
+This initial phase involves the systematic cleaning and preparation of the motion data, ensuring it is optimized for efficient retrieval.
+#### Feature Extraction:
+Utilizing advanced machine learning algorithms, relevant features are extracted to facilitate the identification and retrieval of specific poses.
+#### Indexing:
+A sophisticated indexing system is employed to organize and categorize the motion data, enhancing the speed and accuracy of the retrieval process.
+#### Query Processing:
+Pose queries are processed using innovative algorithms, ensuring that the retrieval is not only rapid but also highly accurate.
+#### Pose Retrieval:
+The final phase where specific poses are efficiently retrieved from the motion database, ready for further analysis or application.
